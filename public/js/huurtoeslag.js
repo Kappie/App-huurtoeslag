@@ -24,13 +24,17 @@ function markUnapplicableElements() {
   $("div[id*=" + situatie + "]").each(function() {
     $(this).removeClass("unapplicable");
   });
+
+  if ( isSingleParent(situatie) ) {
+    // mark single parent radio buttons applicable or not
+  }
 }
 
 function showNextElement() {
   $(".form-element").each(function() {
     if ( hasInputWithoutValue( $(this) ) && !$(this).hasClass("unapplicable")) {
       $(this).show();
-      $(this).find("input").focus();
+      $(this).find("input").first().focus();
       // breaks out of each loop
       return false;
     }
@@ -49,4 +53,7 @@ function hasInputWithValue(element) {
   } else {
     return !!input.val();
   }
+}
+
+function isSingleParent() {
 }
