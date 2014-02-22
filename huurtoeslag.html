@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Huurtoeslag 2013</title>
+    <link href="public/css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+  <h1>Huurtoeslag 2013</h1>
+    
+    <form id="form-huurtoeslag">
+      <p>Kies je situatie:</p>
+      <p>Heb je een &hellip; </p>
+      <div class="form-element">
+      <select name="situatie">
+        <option value="toeslagpartner">Toeslagpartner</option>
+        <option value="medebewoner">Medebewoner</option>
+        <option value="geen-van-beide">Geen van beide</option>
+      </select>
+      </div>
+      
+
+      <div class="form-element hidden" id="geboortedatum"><label>Geboortedatum: <input type="text" name="geboortedatum"></label></div>
+      <div class="form-element hidden" id="geboortedatum-medebewoner"><label>Geboortedatum van je medebewoner:<input type="text" name="geboortedatum-partner"></label></div>
+      <div class="form-element hidden" id="geboortedatum-partner"><label>Geboortedatum van je toeslagpartner:<input type="text" name="geboortedatum-partner"></label></div>
+
+
+      <div class="form-element hidden" id="alleenstaande-ouder">
+        <p>Bent u een alleenstaande ouder met recht op alleenstaande-ouderkorting?</p>
+        <input id="alleenstaande-ouder-ja" name="alleenstaande-ouder" type="radio" value="ja" />
+        <label for="alleenstaande-ouder-ja">Ja</label>
+        <input id="alleenstaande-ouder-nee" name="alleenstaande-ouder" type="radio" value="nee" />
+        <label for="alleenstaande-ouder-nee">Nee</label>
+      </div>
+
+      <div class="form-element hidden" id="toetsingsinkomen"><label>Toetsingsinkomen: <input type="text" name="toetsingsinkomen"></label></div>
+      <div class="form-element hidden" id="toetsingsinkomen-medebewoner"><label>Toetsingsinkomen van je medebewoner:<input type="text" name="toetsingsinkomen-partner"></label></div>
+      <div class="form-element hidden" id="toetsingsinkomen-partner"><label>Toetsingsinkomen van je toeslagpartner:<input type="text" name="toetsingsinkomen-partner"></label></div>
+
+      <div class="form-element hidden" id="vermogen"><label>Vermogen: <input type="text" name="vermogen"></label></div>
+      <div class="form-element hidden" id="vermogen-medebewoner"><label>Vermogen van je medebewoner:<input type="text" name="vermogen-partner"></label></div>
+      <div class="form-element hidden" id="vermogen-partner"><label>Vermogen van je toeslagpartner:<input type="text" name="vermogen-partner"></label></div>
+
+      <div class="form-element hidden" id="huur"><label>Huur: <input type="text" name="huur"></label></div>
+
+<!--       <div class="form-element hidden" id="verzamelinkomen"><label>Verzamelinkomen: <input type="text" name="verzamelinkomen"></label></div>
+      <div class="form-element hidden" id="vermogen"><label>de hoogte van je vermogen (gezamenlijk met je partner of medebewoner: banktegoeden, beleggingen, overige box 3 bezittingen) op 1-1-2013<input type="text" name="vermogen"></label></div>
+      <div class="form-element hidden" id="huurbedrag"><label>Huurbedrag:<input type="text" name="huurbedrag"></label></div>
+      <div class="form-element hidden" id="verzamelinkomen-partner"><label>verzamelinkomen uit de aangifte inkomstenbelasting 2013 van je toeslagpartner / medebewoner<input type="text" name="verzamelinkomen-partner"></label></div>
+      <div class="form-element hidden" id="bsn-partner"><label>Burgerservicenummer van je toeslagpartner of medebewoner:<input type="text" name="bsn-partner"></label></div> -->
+      
+    </form>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="public/js/huurtoeslag.js"></script>
+  </body>
+</html>
