@@ -11,10 +11,11 @@
     
     <form id="form-huurtoeslag">
       <p>Kies je situatie:</p>
-      <p>Heb je een &hellip; </p>
+      <p>Heb je een toeslagpartner of medebewoner? </p>
       <div class="form-element">
       <select name="situatie">
-        <option value="toeslagpartner">Toeslagpartner</option>
+        <option value="no-selection">Ik heb een &hellip;</option>
+        <option value="partner">Toeslagpartner</option>
         <option value="medebewoner">Medebewoner</option>
         <option value="geen-van-beide">Geen van beide</option>
       </select>
@@ -22,7 +23,7 @@
       
 
       <div class="form-element hidden" id="geboortedatum"><label>Geboortedatum: <input type="text" name="geboortedatum"></label></div>
-      <div class="form-element hidden" id="geboortedatum-medebewoner"><label>Geboortedatum van je medebewoner:<input type="text" name="geboortedatum-partner"></label></div>
+      <div class="form-element hidden" id="geboortedatum-medebewoner"><label>Geboortedatum van je medebewoner:<input type="text" name="geboortedatum-medebewoner"></label></div>
       <div class="form-element hidden" id="geboortedatum-partner"><label>Geboortedatum van je toeslagpartner:<input type="text" name="geboortedatum-partner"></label></div>
 
 
@@ -35,14 +36,16 @@
       </div>
 
       <div class="form-element hidden" id="toetsingsinkomen"><label>Toetsingsinkomen: <input type="text" name="toetsingsinkomen"></label></div>
-      <div class="form-element hidden" id="toetsingsinkomen-medebewoner"><label>Toetsingsinkomen van je medebewoner:<input type="text" name="toetsingsinkomen-partner"></label></div>
+      <div class="form-element hidden" id="toetsingsinkomen-medebewoner"><label>Toetsingsinkomen van je medebewoner:<input type="text" name="toetsingsinkomen-medebewoner"></label></div>
       <div class="form-element hidden" id="toetsingsinkomen-partner"><label>Toetsingsinkomen van je toeslagpartner:<input type="text" name="toetsingsinkomen-partner"></label></div>
 
       <div class="form-element hidden" id="vermogen"><label>Vermogen: <input type="text" name="vermogen"></label></div>
-      <div class="form-element hidden" id="vermogen-medebewoner"><label>Vermogen van je medebewoner:<input type="text" name="vermogen-partner"></label></div>
+      <div class="form-element hidden" id="vermogen-medebewoner"><label>Vermogen van je medebewoner:<input type="text" name="vermogen-medebewoner"></label></div>
       <div class="form-element hidden" id="vermogen-partner"><label>Vermogen van je toeslagpartner:<input type="text" name="vermogen-partner"></label></div>
 
       <div class="form-element hidden" id="huur"><label>Huur: <input type="text" name="huur"></label></div>
+
+
 
 <!--       <div class="form-element hidden" id="verzamelinkomen"><label>Verzamelinkomen: <input type="text" name="verzamelinkomen"></label></div>
       <div class="form-element hidden" id="vermogen"><label>de hoogte van je vermogen (gezamenlijk met je partner of medebewoner: banktegoeden, beleggingen, overige box 3 bezittingen) op 1-1-2013<input type="text" name="vermogen"></label></div>

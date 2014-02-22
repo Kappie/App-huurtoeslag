@@ -3,24 +3,35 @@ $("#form-huurtoeslag").change(function() {
 });
 
 function renderForm() {
-  var situatie = $("[name=situatie]").val();
   showFilledInElements();
-  // showNextElement();
+  markUnapplicableElements();
+  showNextElement();
 }
 
 function showFilledInElements() {
-  $(".form-element").each(function() {
-    var input = $(this).find("input"); 
-    if ( input.val() ) {
+  $(".form-element").each(function() {    
+    if ( hasInputWithValue( $(this) ) ) {
       $(this).show();
     }
   });  
 }
 
+function markUnapplicableElements() {
+  var situatie = $("[name=situatie]").val();
+  $("div[id*='medebewoner'], div[id*='partner']").each(function() {
+    $(this).addClass("unapplicable");
+  });
+  $("div[id*=" + situatie + "]").each(function() {
+    $(this).removeClass("unapplicable");
+  });
+}
+
 function showNextElement() {
   $(".form-element").each(function() {
-    if ( hasInputWithoutValue( $(this) ) ) {
+    if ( hasInputWithoutValue( $(this) ) && !$(this).hasClass("unapplicable")) {
       $(this).show();
+      $(this).find("input").focus();
+      // breaks out of each loop
       return false;
     }
   });
@@ -29,4 +40,13 @@ function showNextElement() {
 function hasInputWithoutValue(element) {
   var input = element.find("input");
   return !input.val() && input.size() !== 0;
+}
+
+function hasInputWithValue(element) {
+  var input = element.find("input");
+  if ( input.is(":radio") ) {
+    return (input.is(":radio:checked")) ? true : false;
+  } else {
+    return !!input.val();
+  }
 }
